@@ -1,0 +1,57 @@
+inherit_from: configs/face_simple_configs/default.yaml
+method: face_simple
+data:
+  dataset: lip_someone
+  path: dataset/may_face_crop_lip # Please replace with your own data
+  extension: .jpg
+  width: 120 # width of lip image. Please replace with your own data.
+  height: 80 # height of lip image. Please replace with your own data.
+  face_img_focal: 1200 # focal computed by 3DMM. Please replace with your own data.
+model:
+  lambda_rgb: 1.0
+  audio_embed: 6
+  uv_embed: 10
+  audio_net: true
+  use_uv_audio_sep: true
+  audio_not_embed: true
+  use_head_pose: false
+  head_pose_multires: 10
+  MLP_version: 'v2'
+  use_time: true
+  use_post_fusion: true
+  use_post_fusion_blackaug: true
+  use_light_unet: true
+  post_fusion_channel: 3
+  expand_lip_mask: true
+  use_canonical_depth: true
+  canonical_depth_height: 500 # height of depth image. Please replace with your own data.
+  canonical_depth_width: 500 # width of depth image. Please replace with your own data.
+  canonical_depth_init_path: dataset/may_face_crop_lip/depth_face_canonical.npy # Please replace with your own data.
+training:
+  batch_size: 1
+  batch_size_val: 1
+  n_workers: 8
+  out_dir: log/face_simple/may # Path to save models. Please replace with your own data.
+  multi_gpu: true
+  n_sample_points: 16
+  checkpoint_every: 5000
+  backup_every: 20000
+  visualize_every: 10000
+  validate_every: -1
+  raw_noise_std: 1
+  batch_rays: 9600 # width of lip image x height of lip image. Please replace with your own data.
+  w_post_fusion: 1.0
+  use_perceptual_loss: true
+  w_perceptual_loss: 0.01
+  use_syncloss: true
+  use_sync_contrastive_loss: true
+  w_syncloss: 0.01
+  use_fusion_face: true
+  fusion_lip_only: true
+  use_local_ensemble: true
+  use_canonical_depth_loss_photo: false
+  use_canonical_depth_loss_photo_v2: true
+  use_canonical_depth_loss_geo: false
+  fix_post_net: false
+
+

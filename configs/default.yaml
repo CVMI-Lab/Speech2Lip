@@ -1,0 +1,82 @@
+method: nerf
+data:
+  dataset: Replica
+  path: dataset/replica_semantic
+  focal_length: 160
+  classes: null
+  input_type: image
+  dim: 3
+  semantic_label: []
+  skip_index: []
+  pose_name: poses_bounds.npy
+  extension: .png
+model:
+  decoder: nerf
+  encoder: null
+  embedder: positional
+  multires: 10
+  multires_view: 4
+  net_depth: 8
+  net_width: 256
+  output_ch: 4
+  use_viewdirs: true
+  net_depth_fine: 8
+  net_width_fine: 256
+  output_ch_fine: 4
+  c_dim: 256
+  lambda_rgb: 1.
+  lambda_depth: 0
+  lambda_image_gradients: 0.
+  lambda_normal: 0.01
+  lambda_semantic: 0.
+  semantic_branch: False
+training:
+  out_dir: log/nerf_pretrain/all_rays
+  update_pose: false
+  batch_size: 2048 # 64 * 1024
+  batch_size_val: 512 # 32 * 1024
+  print_every: 10
+  checkpoint_every: 200
+  visualize_every: 500
+  validate_every: 10000
+  backup_every: 50000
+  learning_rate: 0.0001
+  scheduler_milestones: [200000, 400000]
+  scheduler_gamma: 0.5
+  model_selection_metric: psnr
+  model_selection_mode: maximize
+  n_sample_points: 64
+  n_sample_points_fine: 64
+  n_workers: 0
+  lindisp: false
+  perturb: true
+  raw_noise_std: 1
+  logfile: train.log
+  sample_continuous: False
+  overwrite_visualization: true
+  multi_gpu: true
+test:
+  eval_file_name: eval_meshes
+  threshold: 0.5
+  model_file: model_best.pt
+generation:
+  batch_size: 1
+  vis_n_outputs: 30
+  generation_dir: generation
+  simplify_nfaces: null
+  padding: 0.0
+  resolution_0: 32
+  upsampling_steps: 3
+  refinement_step: 30
+  refine_max_faces: 10000
+  with_colors: true
+  mesh_extension: ply
+rendering:
+  render_dir: rendering
+  colors: rgb
+  resolution: [256, 256]
+  ray_sampling_accuracy: [1024, 1025]
+  extension: jpg
+  n_views: 1
+  n_start_view: 0
+  background: white

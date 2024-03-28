@@ -2,7 +2,7 @@
 
 <!-- ![](paper_data/pipeline.png) -->
 
-Official PyTorch implementation for the paper "[Speech2Lip: High-fidelity Speech to Lip Generation by Learning from a Short Video (ICCV 2023)](https://arxiv.org/pdf/2309.04814.pdf)".<br/>
+Official PyTorch implementation for the paper "[Speech2Lip: High-fidelity Speech to Lip Generation by Learning from a Short Video](https://arxiv.org/pdf/2309.04814.pdf)".<br/>
 Authors: Xiuzhe Wu, Pengfei Hu, Yang Wu, Xiaoyang Lyu, Yan-Pei Cao, Ying Shan, Wenming Yang, Zhongqian Sun, and Xiaojuan Qi.
 
 Feel free to contact xzwu@eee.hku.hk if you have any questions.

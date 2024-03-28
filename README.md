@@ -1,11 +1,11 @@
 # Speech2Lip
+Official PyTorch implementation for the paper "[Speech2Lip: High-fidelity Speech to Lip Generation by Learning from a Short Video](https://arxiv.org/pdf/2309.04814.pdf)".
 
-<!-- ![](paper_data/pipeline.png) -->
+[Project Page](https://wxzwxzwxz.github.io/Speech2Lip/) | [Paper](https://wxzwxzwxz.github.io/Speech2Lip/static/files/mypdf.pdf)
 
-Official PyTorch implementation for the paper "[Speech2Lip: High-fidelity Speech to Lip Generation by Learning from a Short Video](https://arxiv.org/pdf/2309.04814.pdf)".<br/>
-Authors: Xiuzhe Wu, Pengfei Hu, Yang Wu, Xiaoyang Lyu, Yan-Pei Cao, Ying Shan, Wenming Yang, Zhongqian Sun, and Xiaojuan Qi.
+Feel free to contact xzwu@eee.hku.hk if you have any questions about the code.
 
-Feel free to contact xzwu@eee.hku.hk if you have any questions.
+![](images/picture1.png)
 
 ## Prerequisites
 - You can create an environment with:

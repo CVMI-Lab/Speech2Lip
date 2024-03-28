@@ -1,4 +1,4 @@
-# Speech2Lip: High-fidelity Speech to Lip Generation by Learning from a Short Video (ICCV 2023)
+# Speech2Lip
 
 <!-- ![](paper_data/pipeline.png) -->
 
